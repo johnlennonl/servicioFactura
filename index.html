@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Factura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="contenedorFacturas">
+        <div class="factura" id="pago">
+            <h2>Datos Personales</h2>
+            <input type="text" id="nombre" placeholder="Nombre"><br>
+            <input type="email" id="email" placeholder="Correo Electrónico"><br>
+        
+            <h2>Método de Pago</h2>
+            <select  id="tipoPago">
+              <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+              <option value="criptomoneda">Criptomoneda</option>
+            </select>
+        
+            <div class="mt-3 mb-3" id="datosTarjeta" style="display:none;" >
+              <input type="text" id="numeroTarjeta" placeholder="Número de Tarjeta"><br>
+              <input type="text" id="fechaVencimiento" placeholder="MM/AA"><br>
+              <input type="text" id="cvv" placeholder="CVV"><br>
+            </div>
+        
+            <div class="mt-3 mb-3"  id="datosCripto" style="display:none;">
+              <label id="wallet"> Wallet: ksd894r8ojef3kfjkiwduef983498 </label>
+            </div>
+        
+            <h2>Monto</h2>
+            <input type="number" id="monto" placeholder="Monto a Pagar"><br>
+            <input type="text" id="idTransferencia" placeholder="ID de Transferencia (opcional)"><br>
+        
+            <button onclick="procesarPago()">Pagado</button>
+          </div>
+        
+          <div class="factura" id="factura" style="display:none;"></div>
+    </div>
+
+   <div class="d-flex justify-content-center">
+    <div class="historial">
+        <h2>Historial de Facturas</h2>
+        <div id="historialFacturas" class="mb-3"></div>
+      
+       </div>
+   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="scripts/main.js"></script>
+
+</body>
+</html>
